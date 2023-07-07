@@ -1,8 +1,8 @@
 import React from "react";
 import React, { useState, useEffect } from 'react'
-import Search from './components/Search/Search';
-import Card from './components/Card/Card';
-import ListaPokemon from './components/ListaPokemon/ListaPokemon'
+import Search from './Search/Search'
+import Card from "./ListaPokemon/Card/Card";
+import ListaPokemon from './ListaPokemon/ListaPokemon'
 
 const Main = () => {
   const [search, setSearch] = useState('');
@@ -12,7 +12,7 @@ const Main = () => {
 
     const getPokemon = async () => {
       try{
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`)
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}`)
         const data = await response.json()
         setSearch(data)
 
