@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const Card = ({ pokemon }) => {
   if (pokemon) {
     const { name, img, ability } = pokemon;
@@ -10,7 +11,7 @@ const Card = ({ pokemon }) => {
     
 
     return (
-      <section>
+      <section className="card-container">
         <img src={img} alt={name} />
         <p>{ability}</p>
         <Link to={url}>{name}</Link>

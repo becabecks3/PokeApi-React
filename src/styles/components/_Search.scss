@@ -1,0 +1,11 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.form-container{
+    @include center-element;
+    &>input{
+        height: 40px;
+        width: 250px;
+        font-size: 30px;
+    }
+}

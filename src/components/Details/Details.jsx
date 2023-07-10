@@ -1,4 +1,3 @@
-// Componente Details
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -9,21 +8,21 @@ const Details = () => {
   const [pokemonDetails, setPokemonDetails] = useState(null);
 
   useEffect(() => {
-    const fetchPokemonDetails = async () => {
+    const pokemonDetails = async () => {
       try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
         if (response.ok) {
           const data = await response.json();
           setPokemonDetails(data);
         } else {
-          throw new Error("Error al obtener los detalles del Pokémon");
+          throw new Error("No encontrado");
         }
       } catch (error) {
         console.log(error);
       }
     };
 
-    fetchPokemonDetails();
+    pokemonDetails();
   }, [name]);
 
   return (
@@ -33,7 +32,6 @@ const Details = () => {
         <>
           <img src={pokemonDetails.sprites.front_default} alt={name} />
           <p>{pokemonDetails.abilities[0].ability.name}</p>
-          {/* Mostrar más detalles según la estructura de datos de la API */}
         </>
       )}
     </section>

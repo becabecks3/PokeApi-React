@@ -1,0 +1,9 @@
+@mixin center-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin rounded-border($radius) {
+border-radius: $radius;
+} 

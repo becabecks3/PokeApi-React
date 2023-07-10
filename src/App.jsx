@@ -11,24 +11,20 @@ function App() {
 
   const [list, setList] = useState([]);
 
-  const updateList = (info) => {
-    console.log(info);
-    setList((prevList) => [...prevList, info]);
-  };
-
   const data = {
     list,
-    updateList
+    setList
   }
 
   return (
     <>
     <BrowserRouter>
-      <Header />
-      <UserContext.Provider value={data} >
-        <Main />
-      </UserContext.Provider>
-      <Footer />
+        <Header />
+        <UserContext.Provider value={data} >
+          <Main />
+        </UserContext.Provider>
+       <Footer />
+      
     </BrowserRouter>
     </>
   )
